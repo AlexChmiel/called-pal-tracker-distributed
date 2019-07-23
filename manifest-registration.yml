@@ -10,3 +10,4 @@ applications:
     JAVA_OPTS: '-Xss256k -Xmx192m -XX:MaxMetaspaceSize=100m'
   services:
   - tracker-registration-database
+  - tracker-service-registry

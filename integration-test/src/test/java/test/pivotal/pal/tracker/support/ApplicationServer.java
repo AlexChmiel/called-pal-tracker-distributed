@@ -31,7 +31,7 @@ public class ApplicationServer {
 
         serverProcess = processBuilder.start();
     }
-
+    // comment
     public void startWithDatabaseName(String dbName) throws IOException, InterruptedException {
         String dbUrl = "jdbc:mysql://localhost:3306/" + dbName + "?useSSL=false&useTimezone=true&serverTimezone=UTC&useLegacyDatetimeCode=false";
 

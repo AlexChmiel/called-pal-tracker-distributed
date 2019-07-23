@@ -2,7 +2,7 @@ applications:
 - name: tracker-registration
   path: ./applications/registration-server/build/libs/registration-server.jar
   routes:
-  - route: registration-server-chmiela.cfapps.io
+  - route: https://registration-server-chmiela.cfapps.io
   memory: 384M
   instances: 1
   env:

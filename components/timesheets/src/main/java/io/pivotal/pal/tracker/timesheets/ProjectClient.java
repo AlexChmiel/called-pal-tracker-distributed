@@ -24,11 +24,11 @@ public class ProjectClient {
         return project;
     }
 
-    private void storeProjectInMemory(ProjectInfo project, long id){
+    public void storeProjectInMemory(ProjectInfo project, long id){
         map.put(id, project);
     }
 
-    private ProjectInfo getProjectFromCache(long projectId) {
+    public ProjectInfo getProjectFromCache(long projectId) {
         return map.get(projectId);
     }
 }

@@ -1,5 +1,6 @@
 package io.pivotal.pal.tracker.timesheets;
 
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
@@ -29,7 +30,7 @@ public class App {
     }
 
     @Bean
-    ProjectClient projectClient(RestOperations restOperations,
+    ProjectClient projectClient(@Autowired RestOperations restOperations,
         @Value("${registration.server.endpoint}") String registrationEndpoint
     ) {
         return new ProjectClient(restOperations, registrationEndpoint);

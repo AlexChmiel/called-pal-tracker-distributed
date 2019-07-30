@@ -3,6 +3,8 @@ package io.pivotal.pal.tracker.timesheets;
 import io.pivotal.pal.tracker.timesheets.data.TimeEntryDataGateway;
 import io.pivotal.pal.tracker.timesheets.data.TimeEntryFields;
 import io.pivotal.pal.tracker.timesheets.data.TimeEntryRecord;
+
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
@@ -19,6 +21,7 @@ import static java.util.stream.Collectors.toList;
 public class TimeEntryController {
 
     private final TimeEntryDataGateway gateway;
+    @Autowired
     private final ProjectClient client;
 
     public TimeEntryController(TimeEntryDataGateway gateway, ProjectClient client) {

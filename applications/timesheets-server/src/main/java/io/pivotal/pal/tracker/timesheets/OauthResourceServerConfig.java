@@ -25,19 +25,17 @@ public class OauthResourceServerConfig extends ResourceServerConfigurerAdapter {
     @LoadBalanced
     public RestOperations restTemplate(OAuth2ProtectedResourceDetails resource,
                                        @Autowired
-                                        @Qualifier("oauth2ClientContext") OAuth2ClientContext oAuth2ClientContext) {
+                                       @Qualifier("oauth2ClientContext") OAuth2ClientContext oAuth2ClientContext) {
         return new OAuth2RestTemplate(resource, oAuth2ClientContext);
     }
 
     @Override
     public void configure(HttpSecurity http) throws Exception {
-        // enforce authentication on our API endpoints.
         http.authorizeRequests().anyRequest().authenticated();
     }
 
     @Override
     public void configure(ResourceServerSecurityConfigurer resources) throws Exception {
-        // do not require a resource id in AccessToken.
         resources.resourceId(null);
     }
 }

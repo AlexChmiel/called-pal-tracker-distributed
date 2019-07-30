@@ -21,14 +21,12 @@ import static java.util.stream.Collectors.toList;
 public class TimeEntryController {
 
     private final TimeEntryDataGateway gateway;
-    @Autowired
     private final ProjectClient client;
 
-    public TimeEntryController(TimeEntryDataGateway gateway, ProjectClient client) {
+    public TimeEntryController(TimeEntryDataGateway gateway, @Autowired ProjectClient client) {
         this.gateway = gateway;
         this.client = client;
     }
-
 
     @PostMapping
     public ResponseEntity<TimeEntryInfo> create(@RequestBody TimeEntryForm form) {

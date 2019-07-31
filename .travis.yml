@@ -19,6 +19,7 @@ jobs:
         mariadb: '10.2'
       install: skip
       before_script:
+        - chmod a+x gradlew
         - mysql -uroot < databases/create_databases.sql
         - ./gradlew testMigrate
       script:
@@ -42,6 +43,7 @@ jobs:
         mariadb: '10.2'
       install: skip
       before_script:
+        - chmod a+x gradlew
         - mysql -uroot < databases/create_databases.sql
         - ./gradlew testMigrate
       script:
@@ -61,6 +63,7 @@ jobs:
         mariadb: '10.2'
       install: skip
       before_script:
+        - chmod a+x gradlew
         - mysql -uroot < databases/create_databases.sql
         - ./gradlew testMigrate
       script:
@@ -80,6 +83,7 @@ jobs:
         mariadb: '10.2'
       install: skip
       before_script:
+        - chmod a+x gradlew
         - mysql -uroot < databases/create_databases.sql
         - ./gradlew testMigrate
       script:
@@ -140,6 +144,7 @@ jobs:
     - stage: migrate
       language: java
       before_install:
+        - chmod +x gradlew
         - wget -q -O - https://packages.cloudfoundry.org/debian/cli.cloudfoundry.org.key | sudo apt-key add -
         - echo "deb https://packages.cloudfoundry.org/debian stable main" | sudo tee /etc/apt/sources.list.d/cloudfoundry-cli.list
         - sudo apt-get update

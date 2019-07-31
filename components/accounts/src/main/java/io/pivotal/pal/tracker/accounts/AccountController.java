@@ -13,7 +13,7 @@ import static java.util.stream.Collectors.toList;
 
 @RestController
 public class AccountController {
-
+    // comment
     private final AccountDataGateway gateway;
 
     public AccountController(AccountDataGateway gateway) {

@@ -20,7 +20,7 @@ import org.springframework.web.client.RestOperations;
 @Configuration
 @ConditionalOnProperty(value = "application.oauth-enabled", matchIfMissing = true)
 public class OauthResourceServerConfig extends ResourceServerConfigurerAdapter {
-
+    //comment
     @Bean
     @LoadBalanced
     public RestOperations restTemplate(OAuth2ProtectedResourceDetails resource,

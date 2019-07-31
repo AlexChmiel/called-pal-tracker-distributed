@@ -8,7 +8,9 @@ applications:
   env:
     JBP_CONFIG_OPEN_JDK_JRE: '{ jre: { version: 11.+ }, memory_calculator: { stack_threads: 10 } }'
     JAVA_OPTS: '-Xss256k -Xmx192m -XX:MaxMetaspaceSize=100m'
+    GRANT_TYPE: client_credentials
   services:
   - tracker-timesheets-database
   - tracker-service-registry
   - tracker-circuit-breaker-dashboard
+  - tracker-sso

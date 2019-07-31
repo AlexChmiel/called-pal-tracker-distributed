@@ -1,10 +1,12 @@
 package io.pivotal.pal.tracker.timesheets;
 
+import org.springframework.stereotype.Component;
 import org.springframework.web.client.RestOperations;
 import com.netflix.hystrix.contrib.javanica.annotation.HystrixCommand;
 import java.util.Map;
 import java.util.concurrent.ConcurrentHashMap;
 
+@Component
 public class ProjectClient {
 
     private final RestOperations restOperations;
